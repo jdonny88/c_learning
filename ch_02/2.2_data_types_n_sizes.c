@@ -47,5 +47,9 @@ int main()
 
     printf("Here's the range of each qualifed type:\n");
     printf("Range of unsigned int: %u to %u\n", 0, UINT_MAX);
-
+    printf("Range of signed int: %d to %d\n", INT_MIN, INT_MAX);
+    printf("Range of short: %d to %d\n", SHRT_MIN, SHRT_MAX);
+    printf("Range of long: %ld to %ld\n", LONG_MIN, LONG_MAX);
+    printf("Range of long long: %lld to %lld\n", LLONG_MIN, LLONG_MAX);
+    printf("Range of long double: %Le to %Le\n", LDBL_MIN, LDBL_MAX);
 }
