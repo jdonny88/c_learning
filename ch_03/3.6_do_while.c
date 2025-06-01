@@ -26,9 +26,12 @@ void reverse(char s[]) {
     int c, i, j;
 
     for (i = 0, j = strlen(s)-1; i < j; i++, j--) {
-        c = s[i];
-        s[i] = s[j];
-        s[j] = c;
+        c = s[i]; // store the character at position i in c moving from left to right
+        s[i] = s[j]; // store the character at position j in position i moving from right to left
+        // This effectively swaps the characters at positions i and j
+        // e.g. if s is "hello", after the first iteration, s becomes "oellh"
+        // After the second iteration, s becomes "olleh"
+        s[j] = c; // store the character in c at position j, used to get the original character at position i
     }
 }
 
