@@ -3,13 +3,22 @@
 
 int atoi(char []);
 
-main(int argc, char *argv)
+main(int argc, char **argv)
 {
+    char *test = "22";
+    printf("Test case for the number 22...\n");
+    if (atoi(test) == 22)
+        printf("'22' was converted to 22.\n\n");
+    else
+        printf("'22' is still just '22'...\n\n");
+
     if (argc == 2)
     {
-        printf("%s", argv[1]);
+        printf("The string (null-terminated character array) was %s.\n", argv[1]);
+        printf("Its character set integer value is %d.\n", *argv[1]);
+        
         int result = atoi(argv[1]);
-        printf("%d\n", result);
+        printf("The resulting integer is %d.\n", result);
     } else
     {
         printf("Enter a single argument please.\n");
