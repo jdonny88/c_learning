@@ -2,6 +2,7 @@
 // Examples and idioms for working with arrays in C
 
 #include <stdio.h>
+#include <stdlib.h>
 
 // This is the only way to really encapsulate the functionality to determine the size of an array.
 #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
@@ -36,6 +37,17 @@ int main(void) {
 
     printf("This is the third array:\n");
     print_double_array(c, ARRAY_SIZE(c));
+
+    printf("This is what it looks like to access an element out of bounds:\n");
+    // Accessing out of bounds is undefined behavior, but let's see what happens.
+    printf("Element 4 of array a: %f\n", a[4]); // Undefined behavior, but often compilers will not crash.
+    /*
+    You got 0.00000 because the memory after your array happened to look like a zeroed double,
+    but this is not guaranteed and should never be relied upon.
+    Always avoid out-of-bounds access!
+    */
+
+    return EXIT_SUCCESS;
 }
 
 /*
@@ -49,4 +61,10 @@ Idomatic C practices in the code:
 - Keeping functions focused and simple (e.g., print_darray)
 - Using const for function parameters to indicate that the data will not be modified
 - Using a loop to iterate through arrays instead of hardcoding indices
+*/
+
+/*
+"Footguns" in the code:
+- Accessing out-of-bounds elements, which leads to undefined behavior.
+- Using sizeof on a pointer instead of an array, which will not yield the expected size.
 */
