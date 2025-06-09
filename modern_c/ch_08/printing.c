@@ -6,8 +6,6 @@ int main(void) {
     int32_t aa = 42;
     uint32_t b = 42U;
     uint32_t c = -42U;
-    double d = 
-
 
     printf("This is a negative signed integer: %d\n", a);
     printf("This is a positive signed integer with signing: %+d\n", aa);
@@ -32,7 +30,7 @@ int main(void) {
     printf("This is a character literal: %c\n\n", 'A');
     printf("Char: %c, ASCII: %d\n", 'A', 'A'); // Char: A, ASCII: 65
 
-    int n = 42;
+    int32_t n = 42;
     printf("Playing with padding and co...\n");
     printf("Width 10: '%10d'\n", n);
     printf("Left align: '%-10d'\n", n);
